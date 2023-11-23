@@ -32,6 +32,41 @@ function editKeys (array){
     })
 }
 
+function makeSKU(string) {
+  // Convert the string to lowercase
+  const lowercaseString = string.toLowerCase();
+
+  // Replace spaces with a single hyphen
+  const hyphenatedString = lowercaseString.replace(/\s+/g, '-');
+
+  // Replace ampersand with a double hyphen
+  const finalSKU = hyphenatedString.replace(/&/g, '');
+
+  return finalSKU;
+}
+
+function makeSKUArray(array) {
+  let finalArray = [];
+  array.forEach((item) => {
+    const obj = {}
+    obj.name = item
+    obj.sku = makeSKU(item)
+    finalArray.push(obj)
+  })
+  return finalArray;
+}
+
+function makeSKUString(string) {
+  let finalObj = {};
+
+  finalObj.name = string
+  finalObj.sku = makeSKU(string)
+
+  return finalObj;
+}
+
+
+
 const uploadData = async (req, res) => {
   try {
     const { body } = req;
@@ -47,20 +82,25 @@ const uploadData = async (req, res) => {
     data.forEach((item) => {
       let tempObj = {};
       tempObj.sku = item["product sku"] ? removeEnter(item["product sku"]) : "";
-      tempObj.mainCategory = handleDetails(item["main category"]);
-      tempObj.subCategory = handleDetails(item["sub-category"]);
-      tempObj.filter = handleDetails(item["filter"]);
+      tempObj.mainCategory = makeSKUArray( handleDetails(item["main category"]) )
+      tempObj.subCategory = makeSKUArray( handleDetails(item["sub-category"]) )
+      tempObj.filter = makeSKUArray( handleDetails(item["filter"]) )
       tempObj.title = item["title"] ? removeEnter(item["title"]) : "";
       tempObj.name = item["product name"] ? removeEnter(item["product name"]) : "";
+      tempObj.video = "";
+      tempObj.unit = item["unit"] ? removeEnter(item["unit"]) : "";
+      tempObj.color = item["color"] ? handleDetails(item["color"]) : "";
+      tempObj.size = item["size"] ? handleDetails(item["size"]) : "";
       tempObj.description = item["description"]
         ? removeEnter(item["description"])
         : "";
       tempObj.details = handleDetails(item["details"]);
-      tempObj.brand = item["brand"] ? removeEnter(item["brand"]) : "";
-      tempObj.imageReferences = handleDetails(item["imagereference"]);
+      tempObj.brand = item["brand"] ? makeSKUString( removeEnter(item["brand"]) ) : "";
+      tempObj.imageReferences = handleDetails(item["image reference"]);
       tempObj.remarks = handleDetails(item["remarks"]);
       tempObj.unitPrice = item["unit price"] ? removeEnter(item["unit price"]) : "";
       tempObj.vatAmount = item["vat amount"] ? removeEnter(item["vat amount"]) : "";
+      tempObj.discount = "";
       tempObj.priceInclusiveOfVat = item["prices inclusive of vat"]
         ? removeEnter(item["prices inclusive of vat"])
         : "";
@@ -71,9 +111,8 @@ const uploadData = async (req, res) => {
       tempArray.push(tempObj);
     });
     data = tempArray;
-    // console.log(data[0])
-    // console.log(data[1])
-    // console.log(data[2])
+    console.log(data[0])
+    console.log(data[1])
     // try {
     //   const result = await bulkView.uploadData(data);
     //   if (result.success) {
