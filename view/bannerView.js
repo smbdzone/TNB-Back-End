@@ -34,8 +34,24 @@ const deleteBanner = async (id) => {
     }
 };
 
+const updateBanner = async (id, data) => {
+    try {
+        const banner = await bannerModel.findByIdAndUpdate(id, data, { new: true });
+        if (banner) {
+            return { success: true, message: "Data updated", data: banner };
+        } else {
+            return { success: false, message: "Banner not found" };
+        }
+    } catch (error) {
+        console.error(error);
+        return { success: false, message: "Error updating data" };
+    }
+};
+
+
 module.exports = {
     getBanner,
     postBanner,
     deleteBanner,
+    updateBanner,
 };

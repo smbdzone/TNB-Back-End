@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const bannerController = require("../controllers/bannerController");
+const irresistibleDealsController = require("../controllers/irresistibleDealsController");
 
-router.get("/", bannerController.getBanner);
-router.post("/", bannerController.uploadBanner);
-router.delete("/:id", bannerController.deleteBanner);
+router.get("/", irresistibleDealsController.getIrresistibleDeals);
+router.post("/", irresistibleDealsController.uploadIrresistibleDeals);
+router.delete("/:id", irresistibleDealsController.deleteIrresistibleDeals);
+router.put("/:id", irresistibleDealsController.updateIrresistibleDeals);
 
 module.exports = router;
