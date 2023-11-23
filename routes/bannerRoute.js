@@ -5,5 +5,6 @@ const bannerController = require("../controllers/bannerController");
 router.get("/", bannerController.getBanner);
 router.post("/", bannerController.uploadBanner);
 router.delete("/:id", bannerController.deleteBanner);
+router.put("/:id", bannerController.updateBanner);
 
 module.exports = router;

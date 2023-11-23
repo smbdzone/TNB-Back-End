@@ -34,8 +34,23 @@ const deleteIrresistibleDeals = async (id) => {
     }
 };
 
+const updateIrresistibleDeals = async (id, data) => {
+    try {
+        const deals = await irresistibleDealsModel.findByIdAndUpdate(id, data, { new: true });
+        if (deals) {
+            return { success: true, message: "Data deleted", data: deals };
+        } else {
+            return { success: false, message: "Irresistible Deals not found" };
+        }
+    } catch (error) {
+        console.error(error);
+        return { success: false, message: "Error deleting data" };
+    }
+};
+
 module.exports = {
     getIrresistibleDeals,
     postIrresistibleDeals,
     deleteIrresistibleDeals,
+    updateIrresistibleDeals,
 };
