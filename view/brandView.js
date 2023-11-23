@@ -3,7 +3,7 @@ const productModel = require("../models/product");
 const getProductsOfBrand = async (brand) => {
   try {
     // Use Mongoose's find method to search for products that match the brand
-    const products = await productModel.find({ brand });
+    const products = await productModel.find({ 'brand.sku': brand });
 
     // If there are no products found, return an appropriate message
     if (!products) {

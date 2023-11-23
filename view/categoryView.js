@@ -5,8 +5,8 @@ const getProductsOfCategory = async (category) => {
     // Use Mongoose's find method to search for products that match the category
     const products = await productModel.find({
       $or: [
-        { mainCategory: category },
-        { subCategory: category },
+        { 'mainCategory.sku': category },
+        { 'subCategory.sku': category },
       ],
     });
 
