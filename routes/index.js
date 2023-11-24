@@ -9,7 +9,7 @@ const irresistibleDealsRoute = require("./IrresistibleDealsRoute.js");
 
 router.use("/bulk_upload", bulkRoute);
 router.use("/banner", bannerRoute);
-router.use("/irresistible-deals", irresistibleDealsRoute);
+// router.use("/irresistible-deals", irresistibleDealsRoute);
 router.use("/product", productRoute);
 router.use("/category", categoryRoute);
 router.use("/brand", brandRoute);
