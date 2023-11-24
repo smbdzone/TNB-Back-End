@@ -5,7 +5,7 @@ const productRoute = require("./productRoute.js");
 const categoryRoute = require("./categoryRoute.js");
 const brandRoute = require("./brandRoute.js");
 const bannerRoute = require("./bannerRoute.js");
-const irresistibleDealsRoute = require("./IrresistibleDealsRoute.js");
+// const irresistibleDealsRoute = require("./IrresistibleDealsRoute.js");
 
 router.use("/bulk_upload", bulkRoute);
 router.use("/banner", bannerRoute);
