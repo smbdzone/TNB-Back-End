@@ -11,7 +11,7 @@
     "yup": "^1.3.2"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node index.js"
   },
   "name": "shayan-backend",
   "version": "1.0.0",
