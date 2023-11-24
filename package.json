@@ -13,8 +13,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "build": "webpack"
+    "start": "nodemon index.js"
   },
   "name": "shayan-backend",
   "version": "1.0.0",
