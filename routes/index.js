@@ -13,5 +13,6 @@ router.use("/banner", bannerRoute);
 router.use("/product", productRoute);
 router.use("/category", categoryRoute);
 router.use("/brand", brandRoute);
+router.use("/menu", menuRoute);
 
 module.exports = router;
