@@ -2,18 +2,18 @@ const mongoose = require("mongoose");
 
 const menuSchema = mongoose.Schema({
   title: String,
-  slug: String,
+  slug: { type: String, unique: true },
   image: String,
   children: [
     {
       title: String,
-      slug: String,
+      slug: { type: String, unique: true },
     },
   ],
   brands: [
     {
       title: String,
-      slug: String,
+      slug: { type: String, unique: true },
     },
   ],
 });

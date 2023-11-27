@@ -6,6 +6,7 @@ const categoryRoute = require("./categoryRoute.js");
 const brandRoute = require("./brandRoute.js");
 const bannerRoute = require("./bannerRoute.js");
 const dealsRoute = require("./dealsRoute.js");
+const menuRoute = require("./menuRoute.js");
 const cloudinaryImageRoute = require("./cloudinaryImageRoute.js");
 
 router.use("/delete-cloudinary-image", cloudinaryImageRoute);

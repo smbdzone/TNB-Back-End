@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const brandController = require("../controllers/brandController");
+const menuController = require("../controllers/menuController");
 
-router.get("/", brandController.getMenu);
-router.post("/", brandController.getProductsOfBrand);
+router.get("/", menuController.getMenu);
+router.post("/", menuController.createMenu);
+router.put("/:id", menuController.updateMenu);
 
 module.exports = router;
