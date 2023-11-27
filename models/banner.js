@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const bannerSchema = mongoose.Schema({
-    pcImage: {
+    mobileLink: {
         type: String,
         required: true
     },
@@ -9,10 +9,14 @@ const bannerSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    link: {
+    desktopLink: {
         type: String,
         required: true
-    }
+    },
+    desktopImage: {
+        type: String,
+        required: true
+    },
 });
 
 const bannerModel = mongoose.model("banner", bannerSchema);

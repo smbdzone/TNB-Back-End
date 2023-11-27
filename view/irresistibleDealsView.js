@@ -10,6 +10,16 @@ const getIrresistibleDeals = async () => {
     }
 };
 
+const getIrresistibleDealsById = async (id) => {
+    try {
+        const banner = await irresistibleDealsModel.findById(id);
+        return { success: true, message: "Data retrieved", data: banner };
+    } catch (error) {
+        console.error(error);
+        return { success: false, message: "Error Saving Data" };
+    }
+};
+
 const postIrresistibleDeals = async (data) => {
     try {
         const banner = await irresistibleDealsModel.create(data);
@@ -50,6 +60,7 @@ const updateIrresistibleDeals = async (id, data) => {
 
 module.exports = {
     getIrresistibleDeals,
+    getIrresistibleDealsById,
     postIrresistibleDeals,
     deleteIrresistibleDeals,
     updateIrresistibleDeals,

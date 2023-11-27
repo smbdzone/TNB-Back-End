@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const IrresistibleDealsSchema = mongoose.Schema({
-    pcImage: {
+    mobileLink: {
         type: String,
         required: true
     },
@@ -9,10 +9,14 @@ const IrresistibleDealsSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    link: {
+    desktopLink: {
         type: String,
         required: true
-    }
+    },
+    desktopImage: {
+        type: String,
+        required: true
+    },
 });
 
 const IrresistibleDealsModel = mongoose.model("IrresistibleDeals", IrresistibleDealsSchema);
