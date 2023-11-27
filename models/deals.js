@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const IrresistibleDealsSchema = mongoose.Schema({
+const dealsSchema = mongoose.Schema({
     mobileLink: {
         type: String,
         required: true
@@ -19,5 +19,5 @@ const IrresistibleDealsSchema = mongoose.Schema({
     },
 });
 
-const IrresistibleDealsModel = mongoose.model("IrresistibleDeals", IrresistibleDealsSchema);
-module.exports = IrresistibleDealsModel;
+const dealsModel = mongoose.model("deals", dealsSchema);
+module.exports = dealsModel;
