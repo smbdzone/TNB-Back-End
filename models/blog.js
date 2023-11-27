@@ -9,7 +9,7 @@ const blogSchema = mongoose.Schema({
     seo: {
         title: String,
         description: String,
-        slug: String
+        slug: { type: String, unique: true }
     }
 
 });
