@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const bannerSchema = mongoose.Schema({
+const dealsSchema = mongoose.Schema({
     mobileLink: {
         type: String,
         required: true
@@ -19,5 +19,5 @@ const bannerSchema = mongoose.Schema({
     },
 });
 
-const bannerModel = mongoose.model("banner", bannerSchema);
-module.exports = bannerModel;
+const dealsModel = mongoose.model("deals", dealsSchema);
+module.exports = dealsModel;

@@ -10,6 +10,16 @@ const getBanner = async () => {
     }
 };
 
+const getBannerById = async (id) => {
+    try {
+        const banner = await bannerModel.findById(id);
+        return { success: true, message: "Data retrieved", data: banner };
+    } catch (error) {
+        console.error(error);
+        return { success: false, message: "Error Saving Data" };
+    }
+};
+
 const postBanner = async (data) => {
     try {
         const banner = await bannerModel.create(data);
@@ -34,6 +44,7 @@ const deleteBanner = async (id) => {
     }
 };
 
+
 const updateBanner = async (id, data) => {
     try {
         const banner = await bannerModel.findByIdAndUpdate(id, data, { new: true });
@@ -51,6 +62,7 @@ const updateBanner = async (id, data) => {
 
 module.exports = {
     getBanner,
+    getBannerById,
     postBanner,
     deleteBanner,
     updateBanner,

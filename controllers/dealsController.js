@@ -1,8 +1,8 @@
-const bannerView = require("../view/bannerView");
+const dealsView = require("../view/dealsView");
 
-const getBanner = async (req, res) => {
+const getDeals = async (req, res) => {
     try {
-        const result = await bannerView.getBanner();
+        const result = await dealsView.getDeals();
         if (result.success) {
             res
                 .status(200)
@@ -16,10 +16,10 @@ const getBanner = async (req, res) => {
     }
 };
 
-const getBannerById = async (req, res) => {
+const getDealsById = async (req, res) => {
     const { id } = req.params;
     try {
-        const result = await bannerView.getBannerById(id);
+        const result = await dealsView.getDealsById(id);
         if (result.success) {
             res
                 .status(200)
@@ -33,9 +33,9 @@ const getBannerById = async (req, res) => {
     }
 };
 
-const uploadBanner = async (req, res) => {
+const uploadDeals = async (req, res) => {
     try {
-        const result = await bannerView.postBanner(req.body);
+        const result = await dealsView.postDeals(req.body);
 
         if (result.success) {
             res
@@ -50,10 +50,10 @@ const uploadBanner = async (req, res) => {
     }
 };
 
-const deleteBanner = async (req, res) => {
+const deleteDeals = async (req, res) => {
     const { id } = req.params;
     try {
-        const result = await bannerView.deleteBanner(id);
+        const result = await dealsView.deleteDeals(id);
 
         if (result.success) {
             res
@@ -68,10 +68,11 @@ const deleteBanner = async (req, res) => {
     }
 };
 
-const updateBanner = async (req, res) => {
+const updateDeals = async (req, res) => {
     const { id } = req.params;
     try {
-        const result = await bannerView.updateBanner(id, req.body);
+        const result = await dealsView.updateDeals(id, req.body);
+
         if (result.success) {
             res
                 .status(200)
@@ -86,9 +87,9 @@ const updateBanner = async (req, res) => {
 };
 
 module.exports = {
-    getBanner,
-    getBannerById,
-    uploadBanner,
-    deleteBanner,
-    updateBanner,
+    getDeals,
+    getDealsById,
+    uploadDeals,
+    deleteDeals,
+    updateDeals,
 };
