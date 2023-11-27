@@ -6,232 +6,181 @@
         "children": [
             {
                 "title": "Dinnerware",
-                "slug": "dinnerware",
-                "image": "dinnerware.webp",
-                "children": [],
-                "brands": []
-            },
-            {
-                "title": "Glassware",
-                "slug": "glassware",
-                "image": "Glassware.webp",
-                "children": [],
-                "brands": []
+                "slug": "dinnerware"
             },
             {
                 "title": "Flatware",
-                "slug": "flatware",
-                "image": "Flatware.webp",
-                "children": [],
-                "brands": []
+                "slug": "flatware"
             },
             {
-                "title": "Barware",
-                "slug": "barware",
-                "image": "barware.webp",
-                "children": [],
-                "brands": []
-            },
-            {
-                "title": "Coaster & Placemats",
-                "slug": "coaster-placemats",
-                "image": "coaster-placemats.webp",
-                "children": [],
-                "brands": []
-            },
-            {
-                "title": "Casual Dining",
-                "slug": "casual-dining",
-                "image": "casual-dining.webp",
-                "children": [],
-                "brands": []
+                "title": "Bowls",
+                "slug": "bowls"
             },
             {
                 "title": "Serveware",
-                "slug": "serveware",
-                "image": "default-image.webp",
-                "children": [],
-                "brands": []
+                "slug": "serveware"
             },
             {
-                "title": "Tea & Coffee",
-                "slug": "tea-coffee",
-                "image": "Tea & Coffee",
-                "children": [],
-                "brands": []
+                "title": "Salt & Pepper Mills",
+                "slug": "salt--pepper-mills"
             },
             {
-                "title": "Bowls Serveware",
-                "slug": "bowls-serveware",
-                "image": "",
-                "children": [],
-                "brands": []
+                "title": "Glassware",
+                "slug": "glassware"
             },
             {
                 "title": "Kitchen Storage",
-                "slug": "kitchen-storage",
-                "image": "",
-                "children": [],
-                "brands": []
+                "slug": "kitchen-storage"
             },
             {
                 "title": "Salt and Pepper Mills",
-                "slug": "salt-pepper-mill",
-                "image": "",
-                "children": [],
-                "brands": []
+                "slug": "salt-and-pepper-mills"
+            },
+            {
+                "title": "Serving Utensils",
+                "slug": "serving-utensils"
+            },
+            {
+                "title": "Tea and Coffee",
+                "slug": "tea-and-coffee"
+            },
+            {
+                "title": "Coasters and Placemats",
+                "slug": "coasters-and-placemats"
+            },
+            {
+                "title": "Coasters and  Placemats",
+                "slug": "coasters-and--placemats"
+            },
+            {
+                "title": "Coffee maker",
+                "slug": "coffee-maker"
+            },
+            {
+                "title": "Barware",
+                "slug": "barware"
+            },
+            {
+                "title": "Kitchen Tools and Accessories",
+                "slug": "kitchen-tools-and-accessories"
+            },
+            {
+                "title": "Woodware",
+                "slug": "woodware"
+            },
+            {
+                "title": "Sea Food Dining",
+                "slug": "sea-food-dining"
             }
         ],
         "brands": [
             {
+                "title": "Belo Inox",
+                "slug": "belo-inox"
+            },
+            {
                 "title": "American Metalcraft",
-                "slug": "american-metacraft",
-                "image": "american-metacraft.webp"
-            },
-            {
-                "title": "Noritake",
-                "slug": "noritake",
-                "image": "noritake.webp"
-            },
-            {
-                "title": "Zafferano",
-                "slug": "zafferano",
-                "image": "zafferano.webp"
-            },
-            {
-                "title": "Kitchen Craft",
-                "slug": "kitchen-craft",
-                "image": "kitchen-craft.webp"
-            },
-            {
-                "title": "Eisch",
-                "slug": "eisch",
-                "image": "eisch.webp"
-            },
-            {
-                "title": "Bormioli Rocco",
-                "slug": "bormioli-rocco",
-                "image": "bormioli-rocco.webp"
-            },
-            {
-                "title": "Abert",
-                "slug": "abert",
-                "image": "abert.webp"
-            },
-            {
-                "title": "Mepra",
-                "slug": "mepra",
-                "image": "Mepra.webp"
-            },
-            {
-                "title": "David Mason Design",
-                "slug": "david-mason-design",
-                "image": "david-mason-design.webp"
+                "slug": "american-metalcraft"
             },
             {
                 "title": "AdHoc",
-                "slug": "adhoc",
-                "image": "AdHoc.webp"
+                "slug": "adHoc"
             },
             {
-                "title": "Lumian Luxury Bar Tools",
-                "slug": "lumian-luxury bar-tools",
-                "image": "lumian-luxury bar-tools.webp"
+                "title": "Bormioli Rocco",
+                "slug": "bormioli-rocco"
+            },
+            {
+                "title": "David Mason Design",
+                "slug": "david-mason-design"
+            },
+            {
+                "title": "Eisch",
+                "slug": "eisch"
             },
             {
                 "title": "Hakart",
-                "slug": "hakart",
-                "image": "hakart.webp"
+                "slug": "hakart"
             },
             {
-                "title": "Belo Inox",
-                "slug": "belo-inox",
-                "image": "belo-inox.webp"
+                "title": "KitchenCraft",
+                "slug": "kitchenCraft"
+            },
+            {
+                "title": "Lumian Luxury Bar Tools",
+                "slug": "lumian-luxury-bar-tools"
+            },
+            {
+                "title": "Mepra",
+                "slug": "mepra"
+            },
+            {
+                "title": "Noritake",
+                "slug": "noritake"
             },
             {
                 "title": "Nude",
-                "slug": "nude",
-                "image": "nude.webp"
+                "slug": "nude"
+            },
+            {
+                "title": "TNB Woodware",
+                "slug": "tnb-woodware"
+            },
+            {
+                "title": "Sango",
+                "slug": "sango"
+            },
+            {
+                "title": "Zafferano",
+                "slug": "zafferano"
             }
         ]
     },
     {
-        "title": "Bed & Bath",
-        "slug": "bed--bath",
+        "title": "Bed and Bath",
+        "slug": "bed-and-bath",
         "image": "https://res.cloudinary.com/dvwkug6jp/image/upload/v1700719645/bed-bath_dxyrer.png",
         "children": [
             {
-                "title": "Bed Linen",
-                "slug": "tops",
-                "image": "sub-cat-tops.webp",
-                "children": [],
-                "brands": []
-            },
-            {
-                "title": "Duvet & Pillows",
-                "slug": "dresses",
-                "image": "sub-cat-dresses.webp",
-                "children": [],
-                "brands": []
-            },
-            {
-                "title": "Bath Linen",
-                "slug": "socks--tights",
-                "image": "sub-cat-socks-tights.webp",
-                "children": [],
-                "brands": []
-            },
-            {
-                "title": "Bed Decoration",
-                "slug": "pants--leggings",
-                "image": "sub-cat-pants-leggings.webp",
-                "children": [],
-                "brands": []
-            },
-            {
                 "title": "Bathroom Accessories",
-                "slug": "bathroom-accessories",
-                "image": "bathroom-accessories.webp",
-                "children": [],
-                "brands": []
+                "slug": "bathroom-accessories"
             }
         ],
         "brands": [
             {
                 "title": "Kassatex",
-                "slug": "kassatex",
-                "image": "default-image.webp"
+                "slug": "kassatex"
             }
         ]
     },
     {
-        "title": "Drinking Accessories",
-        "slug": "drinking-accessories",
+        "title": "Wine and Drinking Accessories",
+        "slug": "wine-and-drinking-accessories",
         "image": "https://res.cloudinary.com/dvwkug6jp/image/upload/v1700719651/drinking-accessories_zog1ip.png",
         "children": [
             {
-                "title": "Women's Hair Care",
-                "slug": "womens-hair-care",
-                "image": "sub-cat-women-hair-care.webp",
-                "children": [],
-                "brands": []
+                "title": "Storage",
+                "slug": "storage"
             },
             {
-                "title": "Feminine Care",
-                "slug": "feminine-care",
-                "image": "sub-cat-feminine-care.webp",
-                "children": [],
-                "brands": []
+                "title": "Bottle Stoppers",
+                "slug": "bottle-stoppers"
             },
             {
-                "title": "Skincare",
-                "slug": "skincare",
-                "image": "sub-cat-skincare.webp",
-                "children": [],
-                "brands": []
+                "title": "Bottle Opener",
+                "slug": "bottle-opener"
+            },
+            {
+                "title": "Accessories",
+                "slug": "accessories"
             }
         ],
-        "brands": []
+        "brands": [
+            {
+                "title":"KitchenCraft",
+                "slug":"kitchencraft"
+            }
+        ]
     },
     {
         "title": "Cigar Room",
@@ -239,32 +188,54 @@
         "image": "https://res.cloudinary.com/dvwkug6jp/image/upload/v1700719655/cigar-room_ofbujs.png",
         "children": [
             {
-                "title": "Hats & Caps",
-                "slug": "hats--caps",
-                "image": "sub-cat-hats-caps.webp",
-                "children": [],
-                "brands": []
+                "title": "HUMIDOR",
+                "slug": "humidor"
             },
             {
-                "title": "Key Chains",
-                "slug": "key-chains",
-                "image": "sub-cat-key-chains.webp",
-                "children": [],
-                "brands": []
+                "title": "Electrical Humidor",
+                "slug": "electrical-humidor"
             },
             {
-                "title": "Eyewear",
-                "slug": "eyewear",
-                "image": "sub-cat-eyewear.webp",
-                "children": [],
-                "brands": []
+                "title": "Humidifying Solutions",
+                "slug": "humidifying-solutions"
+            },
+            {
+                "title": "Travel Case",
+                "slug": "travel-case"
+            },
+            {
+                "title": "Cigar Cutters",
+                "slug": "cigar-cutters"
+            },
+            {
+                "title": "Cigar Lighters",
+                "slug": "cigar-lighters"
+            },
+            {
+                "title": "Ashtray",
+                "slug": "ashtray"
+            },
+            {
+                "title": "Glassware",
+                "slug": "glassware"
+            },
+            {
+                "title": "Cigar Ashtray",
+                "slug": "cigar-ashtray"
             }
         ],
         "brands": [
             {
                 "title": "Humidor",
-                "slug": "humidor",
-                "image": "default-image.webp"
+                "slug": "humidor"
+            },
+            {
+                "title": "Noritake",
+                "slug": "noritake"
+            },
+            {
+                "title": "Nude",
+                "slug": "nude"
             }
         ]
     },
@@ -274,28 +245,30 @@
         "image": "https://res.cloudinary.com/dvwkug6jp/image/upload/v1700719663/cheese-room_jgoi5n.png",
         "children": [
             {
-                "title": "Sling Bags",
-                "slug": "sling-bags",
-                "image": "sub-cat-sling-bags.webp",
-                "children": [],
-                "brands": []
+                "title": "Serveware",
+                "slug": "serveware"
             },
             {
-                "title": "Clutches & Mini Bags",
-                "slug": "clutches--mini-bags",
-                "image": "sub-cat-clutches-mini-bags.webp",
-                "children": [],
-                "brands": []
-            },
-            {
-                "title": "Handbags",
-                "slug": "handbags",
-                "image": "sub-cat-handbags.webp",
-                "children": [],
-                "brands": []
+                "title": "Cheese Knives",
+                "slug": "cheese-knives"
             }
+            
         ],
-        "brands": []
+        "brands": [
+            {
+                "title": "American Metalcraft",
+                "slug": "american-metalcraft"
+            },
+            {
+                "title": "David Mason Design",
+                "slug": "david-mason-design"
+            },
+            {
+                "title": "KitchenCraft",
+                "slug": "kitchencraft"
+            }
+
+        ]
     },
     {
         "title": "Lighting",
@@ -303,28 +276,25 @@
         "image": "https://res.cloudinary.com/dvwkug6jp/image/upload/v1700719669/lighting_zfnlpx.png",
         "children": [
             {
-                "title": "Luggage",
-                "slug": "luggage",
-                "image": "sub-cat-luggage.webp",
-                "children": [],
-                "brands": []
+                "title": "Votive",
+                "slug": "votive"
             },
             {
-                "title": "Travel Bags & Backpacks",
-                "slug": "travel-bags--backpacks",
-                "image": "sub-cat-travel-bags-backpacks.webp",
-                "children": [],
-                "brands": []
-            },
-            {
-                "title": "Travel Accessories",
-                "slug": "travel-accessories",
-                "image": "sub-cat-travel-accessories.webp",
-                "children": [],
-                "brands": []
+                "title": "Rechargeable Lamp",
+                "slug": "rechargeable-lamp"
             }
         ],
-        "brands": []
+        "brands": [
+            {
+                "title": "Nude",
+                "slug": "nude"
+            },
+            {
+                "title": "Zafferano Lighting",
+                "slug": "zafferano-lighting"
+            }
+
+        ]
     },
     {
         "title": "Kitchen",
@@ -332,35 +302,65 @@
         "image": "https://res.cloudinary.com/dvwkug6jp/image/upload/v1700719677/kitchen_kq3oub.png",
         "children": [
             {
-                "title": "Formal Shoes",
-                "slug": "formal-shoes",
-                "image": "sub-cat-formal-shoes.webp",
-                "children": [],
-                "brands": []
+                "title": "Glassware",
+                "slug": "glassware"
             },
             {
-                "title": "Sandals & Flip-Flops",
-                "slug": "sandals--flip-flops",
-                "image": "sub-cat-sandals-flip-flops.webp",
-                "children": [],
-                "brands": []
+                "title": "kitchen Storage",
+                "slug": "kitchen-storage"
             },
             {
-                "title": "Sneakers",
-                "slug": "sneakers",
-                "image": "sub-cat-sneakers.webp",
-                "children": [],
-                "brands": []
+                "title": "Kitchen Tools and Accessories",
+                "slug": "kitchen-tools-and-accessories"
             },
             {
-                "title": "Tools and Accessories",
-                "slug": "tools-and-accessories",
-                "image": "",
-                "children": [],
-                "brands": []
+                "title": "Kitchen Storage",
+                "slug": "kitchen-storage"
+            },
+            {
+                "title": "Flatware",
+                "slug": "flatware"
+            },
+            {
+                "title": "Serving Utensils",
+                "slug": "serving-utensils"
+            },
+            {
+                "title": "Tea and Coffee",
+                "slug": "tea-and-coffee"
+            },
+            {
+                "title": "Serveware",
+                "slug": "serveware"
+            },
+            {
+                "title": "Coffee maker",
+                "slug": "coffee-maker"
             }
         ],
-        "brands": []
+        "brands": [
+            {
+                "title": "Bormioli Rocco",
+                "slug": "bormioli-rocco"
+            },
+            {
+                "title": "David Mason Design",
+                "slug": "david-mason-design"
+            },
+            {
+                "title": "KitchenCraft",
+                "slug": "kitchencraft"
+            },
+            {
+                "title": "Kitchen Craft",
+                "slug": "kitchen-craft"
+            },
+            {
+                "title": "Nude",
+                "slug": "nude"
+            }
+
+        ]
     },
     {
         "title": "Party Necessities",
@@ -368,28 +368,17 @@
         "image": "https://res.cloudinary.com/dvwkug6jp/image/upload/v1700719682/on-the-go_ajkat3.png",
         "children": [
             {
-                "title": "Housekeeping",
-                "slug": "housekeeping",
-                "image": "sub-cat-housekeeping.webp",
-                "children": [],
-                "brands": []
-            },
-            {
-                "title": "TV Accessories",
-                "slug": "tv-accessories",
-                "image": "sub-cat-tv-accessories.webp",
-                "children": [],
-                "brands": []
-            },
-            {
-                "title": "Small Kitchen Appliances",
-                "slug": "small-kitchen-appliances",
-                "image": "sub-cat-small-kitchen-appliances.webp",
-                "children": [],
-                "brands": []
+                "title": "Disposable Dinnerware",
+                "slug": "disposable-dinnerware"
             }
         ],
-        "brands": []
+        "brands": [
+            {
+                "title": "TAST",
+                "slug": "tast"
+            }
+
+        ]
     },
     {
         "title": "On-the-Go",
@@ -397,78 +386,84 @@
         "image": "https://res.cloudinary.com/dvwkug6jp/image/upload/v1700719682/on-the-go_ajkat3.png",
         "children": [
             {
-                "title": "Home Decor",
-                "slug": "home-decor",
-                "image": "sub-cat-home-decor.webp",
-                "children": [],
-                "brands": []
+                "title": "Lunch Bag",
+                "slug": "lunch-bag"
             },
             {
-                "title": "Tools, DIY & Outdoors",
-                "slug": "tools-diy--outdoors",
-                "image": "sub-cat-tools-diy-outdoors.webp",
-                "children": [],
-                "brands": []
+                "title": "Bento Box",
+                "slug": "bento-box"
             },
             {
-                "title": "Kitchen & Dining",
-                "slug": "kitchen--dining",
-                "image": "sub-cat-kitchen-dining.webp",
-                "children": [],
-                "brands": []
+                "title": "Insulated Bottles",
+                "slug": "insulated-bottles"
+            },
+            {
+                "title": "Food Flask",
+                "slug": "food-flask"
+            },
+            {
+                "title": "Coffee flask",
+                "slug": "coffee-flask"
             }
         ],
-        "brands": []
+        "brands": [
+            {
+                "title": "KitchenCraft",
+                "slug": "kitchencraft"
+            }
+
+        ]
     },
     {
         "title": "Baby and Kids",
-        "slug": "toys-kids-babies2",
+        "slug": "baby-and-kids",
         "image": "https://res.cloudinary.com/dvwkug6jp/image/upload/v1700719686/category-toys-kids-babies_gnaopf.png",
         "children": [
             {
-                "title": "Totes",
-                "slug": "totes",
-                "image": "sub-cat-totes.webp",
-                "children": [],
-                "brands": []
+                "title": "Dining",
+                "slug": "dining"
             },
             {
-                "title": "Briefcases",
-                "slug": "briefcases",
-                "image": "sub-cat-briefcases.webp",
-                "children": [],
-                "brands": []
-            },
-            {
-                "title": "Suit Carriers",
-                "slug": "suit-carriers",
-                "image": "sub-cat-suit-carriers.webp",
-                "children": [],
-                "brands": []
+                "title": "Indoor and Outdoor Play",
+                "slug": "indoor-and-outdoor-play"
             }
         ],
-        "brands": []
+        "brands": [
+            {
+                "title": "David Mason Design",
+                "slug": "david-mason-design"
+            },
+            {
+                "title": "KitchenCraft",
+                "slug": "kitchencraft"
+            },
+            {
+                "title": "Teepees",
+                "slug": "teepees"
+            }
+
+        ]
     },
     {
-        "title": "Gifts Ideas",
-        "slug": "gifts-ideas",
+        "title": "Gifts",
+        "slug": "gifts",
         "image": "https://res.cloudinary.com/dvwkug6jp/image/upload/v1700719693/gifts-ideas_coh762.png",
         "children": [
             {
-                "title": "Snacks & Sweets",
-                "slug": "snacks--sweets",
-                "image": "sub-cat-snacks-sweets.webp",
-                "children": [],
-                "brands": []
+                "title": "Gifts",
+                "slug": "gifts"
             },
             {
-                "title": "Meat & Seafood",
-                "slug": "meat--seafood",
-                "image": "sub-cat-meat-Seafood.webp",
-                "children": [],
-                "brands": []
+                "title": "Tea and Coffee",
+                "slug": "tea-and-coffee"
             }
         ],
-        "brands": []
+        "brands": [
+            {
+                "title": "KitchenCraft",
+                "slug": "kitchencraft"
+            }
+
+        ]
     }
 ]
