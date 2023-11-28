@@ -15,7 +15,7 @@ const getMenu = async () => {
 const updateMenu = async (id, data) => {
 
     try {
-        const deals = await menuModel.findByIdAndUpdate(id, data, { new: true });  // may be update this thing
+        const deals = await menuModel.findByIdAndUpdate(id, data, { new: true }); 
         if (deals) {
             return { success: true, message: "Menu updated", data: deals };
         } else {
@@ -37,9 +37,20 @@ const createMenu = async (data) => {
     }
 };
 
+const deleteMenu = async (id) => {
+    try {
+        const deletedMenu = await menuModel.findByIdAndDelete(id);
+        return { success: true, message: "Data saved", data: deletedMenu };
+    } catch (error) {
+        console.error(error);
+        return { success: false, message: "Error Saving Data" };
+    }
+};
+
 module.exports = {
     getMenu,
     updateMenu,
-    createMenu
+    createMenu,
+    deleteMenu
 };
 

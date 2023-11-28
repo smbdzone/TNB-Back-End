@@ -45,6 +45,16 @@ const postProduct = async (data) => {
   }
 };
 
+const getByArray = async (data) => {
+  try {
+    const products = await productModel.find({ _id: { $in: data } });
+    return { success: true, message: "Data saved", data: products };
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: "Error Saving Data" };
+  }
+};
+
 const deleteProduct = async (id) => {
   try {
     const product = await productModel.findByIdAndDelete(id);
@@ -78,5 +88,6 @@ module.exports = {
   getProductById,
   postProduct,
   deleteProduct,
-  updateProduct
+  updateProduct,
+  getByArray,
 };

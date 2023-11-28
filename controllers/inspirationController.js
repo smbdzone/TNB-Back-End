@@ -1,8 +1,8 @@
-const menuView = require("../view/menuView");
+const inspirationView = require("../view/inspirationView");
 
-const getMenu = async (req, res) => {
+const getInspiration = async (req, res) => {
     try {
-        const result = await menuView.getMenu();
+        const result = await inspirationView.getInspiration();
         if (result.success) {
             res
                 .status(200)
@@ -16,27 +16,24 @@ const getMenu = async (req, res) => {
     }
 };
 
-const updateMenu = async (req, res) => {
+const updateInspiration = async (req, res) => {
     const { id } = req.params;
     const data = {}
     if (req.body.title !== null) {
         data.title = req.body.title;
     }
-    if (req.body.slug !== null) {
-        data.slug = req.body.slug;
-    }
     if (req.body.image !== null) {
         data.image = req.body.image;
     }
-    if (req.body.children !== null) {
-        data.children = req.body.children;
+    if (req.body.products !== null) {
+        data.products = req.body.products;
     }
-    if (req.body.brands !== null) {
-        data.brands = req.body.brands;
+    if (req.body.dots !== null) {
+        data.dots = req.body.dots;
     }
     
     try {
-        const result = await menuView.updateMenu(id, data);
+        const result = await inspirationView.updateInspiration(id, data);
         if (result.success) {
             res
                 .status(200)
@@ -50,10 +47,10 @@ const updateMenu = async (req, res) => {
     }
 };
 
-const createMenu = async (req, res) => {
+const createInspiration = async (req, res) => {
     try {
         
-        const result = await menuView.createMenu(req.body);
+        const result = await inspirationView.createInspiration(req.body);
 
         if (result.success) {
             res
@@ -68,11 +65,11 @@ const createMenu = async (req, res) => {
     }
 };
 
-const deleteMenu = async (req, res) => {
+const deleteInspiration = async (req, res) => {
     const { id } = req.params;
     try {
         
-        const result = await menuView.deleteMenu(id);
+        const result = await inspirationView.deleteInspiration(id);
 
         if (result.success) {
             res
@@ -88,8 +85,8 @@ const deleteMenu = async (req, res) => {
 };
 
 module.exports = {
-    getMenu,
-    updateMenu,
-    createMenu,
-    deleteMenu
+    getInspiration,
+    updateInspiration,
+    createInspiration,
+    deleteInspiration
 };
