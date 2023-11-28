@@ -2,15 +2,12 @@ const userModel = require("../models/user");
 
 const getUserById = async (id) => {
   try {
-    // Use Mongoose's find method to search for products that match the category
     const user = await userModel.findById(id);
 
-    // If there are no products found, return an appropriate message
     if (!user) {
-      return { success: false, message: "No products found for the category" };
+      return { success: false, message: "No User found" };
     }
 
-    // If products are found, return the product data
     return { success: true, message: "Data retrieved", data: user };
   } catch (error) {
     console.error(error);

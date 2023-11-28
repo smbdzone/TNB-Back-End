@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const productInspirationSchema = mongoose.Schema({
+    title: String,
     image: String,
     products: [String],
     dots: [

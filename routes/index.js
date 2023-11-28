@@ -9,6 +9,7 @@ const dealsRoute = require("./dealsRoute.js");
 const giftVoucherRoute = require("./giftVoucherRoute.js");
 const menuRoute = require("./menuRoute.js");
 const userRoute = require("./userRoute.js");
+const inspirationRoute = require("./inspirationRoute.js");
 const cloudinaryImageRoute = require("./cloudinaryImageRoute.js");
 
 router.use("/delete-cloudinary-image", cloudinaryImageRoute);
@@ -21,5 +22,6 @@ router.use("/category", categoryRoute);
 router.use("/brand", brandRoute);
 router.use("/menu", menuRoute);
 router.use("/user", userRoute);
+router.use("/inspiration", inspirationRoute);
 
 module.exports = router;
