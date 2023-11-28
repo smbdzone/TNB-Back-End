@@ -6,7 +6,7 @@ router.get("/:id", userController.getUserById);
 router.put("/", userController.signin);
 router.post("/", userController.signup);
 router.post("/addToCart", userController.addToCart);
-router.post("/removeFromCart/", userController.removeFromCart);
+router.post("/removeFromCart", userController.removeFromCart);
 router.post("/changeItemQuantity", userController.changeItemQuantity);
 router.post("/addToFavorites", userController.addToFavorites);
 router.post("/removeFromFavorites", userController.removeFromFavorites);

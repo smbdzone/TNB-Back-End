@@ -19,6 +19,21 @@ const getProduct = async (req) => {
   }
 };
 
+const latestProducts = async () => {
+  try {
+
+    const products = await productModel
+      .find()
+      .sort({ createdAt: -1 })
+      .limit(15);
+      
+    return { success: true, message: "Data retrieved", data: { products } };
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: "Error retrieving data" };
+  }
+};
+
 
 const getProductById = async (id) => {
   try {
@@ -90,4 +105,5 @@ module.exports = {
   deleteProduct,
   updateProduct,
   getByArray,
+  latestProducts
 };
