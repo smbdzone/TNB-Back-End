@@ -11,7 +11,6 @@ const blogSchema = mongoose.Schema({
         description: String,
         slug: String
     }
-
 });
 
 const blogsModel = mongoose.model("blogs", blogSchema);
