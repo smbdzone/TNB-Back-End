@@ -89,7 +89,7 @@ const addToCart = async (req, res) => {
 const removeFromCart = async (req, res) => {
   try {
     try {
-      const result = await userView.addToCart(req.body);
+      const result = await userView.removeFromCart(req.body);
 
       if (result.success) {
         res
@@ -112,7 +112,7 @@ const removeFromCart = async (req, res) => {
 const changeItemQuantity = async (req, res) => {
   try {
     try {
-      const result = await userView.addToCart(req.body);
+      const result = await userView.changeItemQuantity(req.body);
 
       if (result.success) {
         res
@@ -135,7 +135,7 @@ const changeItemQuantity = async (req, res) => {
 const addToFavorites = async (req, res) => {
   try {
     try {
-      const result = await userView.addToCart(req.body);
+      const result = await userView.addToFavorites(req.body);
 
       if (result.success) {
         res
@@ -158,7 +158,7 @@ const addToFavorites = async (req, res) => {
 const removeFromFavorites = async (req, res) => {
   try {
     try {
-      const result = await userView.addToCart(req.body);
+      const result = await userView.removeFromFavorites(req.body);
 
       if (result.success) {
         res
@@ -181,7 +181,7 @@ const removeFromFavorites = async (req, res) => {
 const addToSaveLater = async (req, res) => {
   try {
     try {
-      const result = await userView.addToCart(req.body);
+      const result = await userView.addToSaveLater(req.body);
 
       if (result.success) {
         res
@@ -204,7 +204,7 @@ const addToSaveLater = async (req, res) => {
 const removeFromSaveLater = async (req, res) => {
   try {
     try {
-      const result = await userView.addToCart(req.body);
+      const result = await userView.removeFromSaveLater(req.body);
 
       if (result.success) {
         res
@@ -227,7 +227,7 @@ const removeFromSaveLater = async (req, res) => {
 const addToRecentlyViewed = async (req, res) => {
   try {
     try {
-      const result = await userView.addToCart(req.body);
+      const result = await userView.addToRecentlyViewed(req.body);
 
       if (result.success) {
         res

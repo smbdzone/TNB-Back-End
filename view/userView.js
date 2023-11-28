@@ -188,6 +188,7 @@ const addToSaveLater = async (data) => {
     // Add the product to save for later if it's not already there
     if (!user.saveForLater.includes(productId)) {
       user.saveForLater.push(productId);
+      user.cartItems.filter(item => item.item !== productId);
       await user.save();
       return { success: true, message: "Item added to save for later", data: user };
     } else {
@@ -211,6 +212,7 @@ const removeFromSaveLater = async (data) => {
 
     // Remove the product from save for later
     user.saveForLater = user.saveForLater.filter(item => item !== productId);
+    user.cartItems.push({item : productId , quantity: 1});
 
     await user.save();
 
@@ -235,7 +237,7 @@ const addToRecentlyViewed = async (data) => {
 
     if (index !== -1) {
       user.recentlyViewed.splice(index, 1);
-    } else if (user.recentlyViewed.length >= 15) {
+    } else if (user.recentlyViewed.length >= 10) {
       user.recentlyViewed.pop();
     }
 
