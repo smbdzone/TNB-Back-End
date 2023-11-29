@@ -2,9 +2,7 @@ const menuModel = require("../models/menu");
 
 const getMenu = async () => {
     try {
-        console.log("Finding")
         const menu = await menuModel.find();
-        console.log(menu)
         return { success: true, message: "Data retrieved", data: menu };
     } catch (error) {
         console.error(error);
@@ -15,7 +13,6 @@ const getMenu = async () => {
 const getMenuById = async (id) => {
     try {
         const menu = await menuModel.findById(id);
-        console.log(menu)
         return { success: true, message: "Data retrieved", data: menu };
     } catch (error) {
         console.error(error);

@@ -111,8 +111,6 @@ const uploadData = async (req, res) => {
       tempArray.push(tempObj);
     });
     data = tempArray;
-    console.log(data[0])
-    console.log(data[1])
     // try {
     //   const result = await bulkView.uploadData(data);
     //   if (result.success) {
