@@ -145,12 +145,13 @@ const addToFavorites = async (req, res) => {
         res.status(500).json({ error: result.error });
       }
     } catch (viewError) {
-      // If an error occurs during the view processing, send a 500 status with an error message.
+       // If an error occurs during the view processing, send a 500 status with an error message.
       res.status(500).json({ error: viewError.message });
     }
   } catch (error) {
     console.log(error);
     // If an error occurs outside of the view processing, send a 500 status with a generic error message.
+    
     res.status(500).json({ error: "Error in creating data" });
   }
 };
@@ -168,12 +169,10 @@ const removeFromFavorites = async (req, res) => {
         res.status(500).json({ error: result.error });
       }
     } catch (viewError) {
-      // If an error occurs during the view processing, send a 500 status with an error message.
       res.status(500).json({ error: viewError.message });
     }
   } catch (error) {
     console.log(error);
-    // If an error occurs outside of the view processing, send a 500 status with a generic error message.
     res.status(500).json({ error: "Error in creating data" });
   }
 };
@@ -191,12 +190,10 @@ const addToSaveLater = async (req, res) => {
         res.status(500).json({ error: result.error });
       }
     } catch (viewError) {
-      // If an error occurs during the view processing, send a 500 status with an error message.
       res.status(500).json({ error: viewError.message });
     }
   } catch (error) {
     console.log(error);
-    // If an error occurs outside of the view processing, send a 500 status with a generic error message.
     res.status(500).json({ error: "Error in creating data" });
   }
 };
@@ -237,12 +234,12 @@ const addToRecentlyViewed = async (req, res) => {
         res.status(500).json({ error: result.error });
       }
     } catch (viewError) {
-      // If an error occurs during the view processing, send a 500 status with an error message.
+          // If an error occurs during the view processing, send a 500 status with an error message.
       res.status(500).json({ error: viewError.message });
     }
   } catch (error) {
     console.log(error);
-    // If an error occurs outside of the view processing, send a 500 status with a generic error message.
+       // If an error occurs outside of the view processing, send a 500 status with a generic error message.
     res.status(500).json({ error: "Error in creating data" });
   }
 };
