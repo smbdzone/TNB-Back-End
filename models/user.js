@@ -13,13 +13,14 @@ const userSchema = mongoose.Schema({
   favorites: [String],
   recentlyViewed: [String],
   saveForLater: [String],
-  image: String,
+  image: { type: String, default: "https://static.vecteezy.com/system/resources/previews/005/545/335/large_2x/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg" },
   username: String,
   phone: String,
   address: String,
   city: String,
   giftRegistry: [String],
   orders: [String],
+  subscribeToNewsletter: { type: Boolean, default: false },
 });
 
 const userModel = mongoose.model("users", userSchema);

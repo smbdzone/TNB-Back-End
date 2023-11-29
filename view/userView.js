@@ -15,6 +15,37 @@ const getUserById = async (id) => {
   }
 };
 
+const getAllUsers = async () => {
+  try {
+
+    const users = await userModel.find({ subscribeToNewsletter: false });
+
+    if (!users) {
+      return { success: false, message: "No User found" };
+    }
+
+    return { success: true, message: "Data retrieved", data: users };
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: "Error retrieving data" };
+  }
+};
+
+const getAllNewsLetterUsers = async () => {
+  try {
+    const newsletterUsers = await userModel.find({ subscribeToNewsletter: true });
+
+    if (!newsletterUsers) {
+      return { success: false, message: "No User found" };
+    }
+
+    return { success: true, message: "Data retrieved", data: newsletterUsers };
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: "Error retrieving data" };
+  }
+};
+
 const signin = async (data) => {
   try {
     const user = await userModel.findOne({ email: data.email });
@@ -40,16 +71,55 @@ const signin = async (data) => {
 
 const signup = async (data) => {
   try {
-    try {
-      const user = await userModel.create(data);
-      return { success: true, message: "Data saved", data: user };
-    } catch (error) {
-      console.error(error);
-      return { success: false, message: "Error Saving Data" };
+    const userEmail = data.email;
+
+    // Check if a user with the provided email already exists
+    const existingUser = await userModel.findOne({ email: userEmail });
+
+    
+    if (existingUser) {
+      const updatedUser = await userModel.findOneAndUpdate(
+        { email: userEmail },
+        { $set: { ...data } },
+        { new: true }
+      );
+      return { success: true, message: "Email already in use", data: updatedUser };
+    } else {
+      // If the user doesn't exist, create a new user
+      const newUser = await userModel.create(data);
+      return { success: true, message: "User created", data: newUser };
     }
   } catch (error) {
     console.error(error);
-    return { success: false, message: "Error retrieving data" };
+    return { success: false, message: "Error creating user" };
+  }
+};
+
+const subscribeToNewsletter = async (data) => {
+  try {
+    const userEmail = data.email;
+    
+    // Try to find a user with the provided email
+    const existingUser = await userModel.findOne({ email: userEmail });
+
+    // If the user exists, update the subscribeToNewsletter field to true
+    if (existingUser) {
+      const updatedUser = await userModel.findOneAndUpdate(
+        { email: userEmail },
+        { $set: { subscribeToNewsletter: true } },
+        { new: true }
+      );
+
+      return { success: true, message: "User updated", data: updatedUser };
+    } else {
+      // If the user doesn't exist, create a new user with subscribeToNewsletter set to true
+      const newUser = await userModel.create({ ...data, subscribeToNewsletter: true });
+
+      return { success: true, message: "New user created", data: newUser };
+    }
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: "Error updating/creating user" };
   }
 };
 
@@ -252,6 +322,23 @@ const addToRecentlyViewed = async (data) => {
   }
 };
 
+const updateUser = async (id, data) => {
+  console.log(id)
+  console.log(data)
+  try {
+      const user  = await userModel.findByIdAndUpdate(id, data, { new: true });
+
+      if (user ) {
+          return { success: true, message: "Data updated", data: user };
+      } else {
+          return { success: false, message: "user not found" };
+      }
+  } catch (error) {
+      console.error("Error updating data:", error);
+      return { success: false, message: "Error updating data" };
+  }
+};
+
 module.exports = {
   getUserById,
   signin,
@@ -264,4 +351,8 @@ module.exports = {
   addToSaveLater,
   removeFromSaveLater,
   addToRecentlyViewed,
+  getAllUsers,
+  getAllNewsLetterUsers,
+  subscribeToNewsletter,
+  updateUser
 };

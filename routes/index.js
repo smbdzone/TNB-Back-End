@@ -10,7 +10,9 @@ const giftVoucherRoute = require("./giftVoucherRoute.js");
 const menuRoute = require("./menuRoute.js");
 const userRoute = require("./userRoute.js");
 const inspirationRoute = require("./inspirationRoute.js");
+const productDetailExplorerRoute = require("./productDetailExplorerRoute.js");
 const cloudinaryImageRoute = require("./cloudinaryImageRoute.js");
+const tableTalkRoute = require("./tableTalkRoute.js");
 
 router.use("/delete-cloudinary-image", cloudinaryImageRoute);
 router.use("/bulk_upload", bulkRoute);
@@ -21,6 +23,8 @@ router.use("/product", productRoute);
 router.use("/category", categoryRoute);
 router.use("/brand", brandRoute);
 router.use("/menu", menuRoute);
+router.use("/tableTalk", tableTalkRoute);
+router.use("/productDetailExplorer", productDetailExplorerRoute);
 router.use("/user", userRoute);
 router.use("/product-inspiration", inspirationRoute);
 
