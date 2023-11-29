@@ -1,5 +1,20 @@
 const blogsModel = require('../models/blog');
 
+const getBlog = async () => {
+    try {
+        const blog = await blogsModel.find();
+
+        if (!blog) {
+            return { success: false, message: 'Blog not found' };
+        }
+
+        return { success: true, message: 'Data retrieved', data: blog };
+    } catch (error) {
+        console.error(error);
+        return { success: false, message: 'Error retrieving data' };
+    }
+};
+
 const postBlog = async (data) => {
     try {
         const blog = await blogsModel.create(data);
@@ -54,4 +69,4 @@ const getBlogBySlug = async (slug) => {
     }
 };
 
-module.exports = { postBlog, updateBlog, deleteBlog, getBlogBySlug };
+module.exports = { getBlog, postBlog, updateBlog, deleteBlog, getBlogBySlug };

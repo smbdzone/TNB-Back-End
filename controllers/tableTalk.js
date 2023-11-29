@@ -1,5 +1,19 @@
 const TableTalkView = require("../view/tableTalk")
 
+const getBlog = async (req, res) => {
+  try {
+    const result = await TableTalkView.getBlog()
+    if (result.success) {
+      res.status(200).json({ data: result.data, error: null, message: result.message });
+    } else {
+      res.status(404).json({ error: result.message });
+    }
+  } catch (error) {
+    console.error('Error getting blog:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
+
 const postBlog = async (req, res) => {
   try {
     const result = await TableTalkView.postBlog(req.body);
@@ -63,5 +77,4 @@ const updateBlog = async (req, res) => {
     }
   };
   
-  
-module.exports = {postBlog, updateBlog, deleteBlog, getBlogBySlug}
+module.exports = {getBlog, postBlog, updateBlog, deleteBlog, getBlogBySlug}
