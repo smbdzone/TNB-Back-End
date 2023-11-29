@@ -10,6 +10,16 @@ const getInspiration = async () => {
     }
 };
 
+const getInspirationById = async (id) => {
+    try {
+        const inspiration = await inspirationModel.findById(id);
+        return { success: true, message: "Data retrieved", data: inspiration };
+    } catch (error) {
+        console.error(error);
+        return { success: false, message: "Error Saving Data" };
+    }
+};
+
 const updateInspiration = async (id, data) => {
 
     try {
@@ -48,6 +58,7 @@ const deleteInspiration = async (id) => {
 
 module.exports = {
     getInspiration,
+    getInspirationById,
     updateInspiration,
     createInspiration,
     deleteInspiration

@@ -12,6 +12,17 @@ const getMenu = async () => {
     }
 };
 
+const getMenuById = async (id) => {
+    try {
+        const menu = await menuModel.findById(id);
+        console.log(menu)
+        return { success: true, message: "Data retrieved", data: menu };
+    } catch (error) {
+        console.error(error);
+        return { success: false, message: "Error Saving Data" };
+    }
+};
+
 const updateMenu = async (id, data) => {
 
     try {
@@ -49,6 +60,7 @@ const deleteMenu = async (id) => {
 
 module.exports = {
     getMenu,
+    getMenuById,
     updateMenu,
     createMenu,
     deleteMenu

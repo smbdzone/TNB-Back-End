@@ -2,6 +2,9 @@ const mongoose = require("mongoose");
 
 const productSchema = mongoose.Schema({
   sku: { type: String, unique: true },
+  title: String,
+  name: String,
+  status: String,
   mainCategory: [
     {
       name: String,
@@ -14,32 +17,36 @@ const productSchema = mongoose.Schema({
       sku: String,
     },
   ],
+  brand: {
+    name: String,
+    sku: String,
+  },
+  unitPrice: String,
+  vatAmount: String,
+  priceInclusiveOfVat: String,
+  discount: String,
+  badge: String,
+  refundable: String,
+  completeTheLook: [String],
+  details: [String],
+  remarks: [String],
+  color: [String],
+  size: [String],
+  lines: [String],
+  overview: String,
+  description: String,
+  meta_title: String,
+  meta_description: String,
+  imageTitle: String,
+  imageReferences: [String],
+  video: String,
+  unit: String,
   filter: [
     {
       name: String,
       sku: String,
     },
   ],
-  title: String,
-  name: String,
-  video: String,
-  unit: String,
-  color: [String],
-  size: [String],
-  description: String,
-  details: [String],
-  brand: {
-    name: String,
-    sku: String,
-  },
-  imageReferences: [String],
-  remarks: [String],
-  unitPrice: String,
-  vatAmount: String,
-  discount: String,
-  priceInclusiveOfVat: String,
-  completeTheLook: [String],
-  imageTitle: String,
 });
 
 const productModel = mongoose.model("product", productSchema);

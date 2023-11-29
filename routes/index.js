@@ -22,6 +22,6 @@ router.use("/category", categoryRoute);
 router.use("/brand", brandRoute);
 router.use("/menu", menuRoute);
 router.use("/user", userRoute);
-router.use("/inspiration", inspirationRoute);
+router.use("/product-inspiration", inspirationRoute);
 
 module.exports = router;
