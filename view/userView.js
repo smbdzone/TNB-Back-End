@@ -1,4 +1,5 @@
 const userModel = require("../models/user");
+const {sendEmail} = require('../services/nodemailerService');
 
 const getUserById = async (id) => {
   try {
@@ -70,25 +71,31 @@ const signin = async (data) => {
 };
 
 const signup = async (data) => {
+  const id = data.id;
+
+    const existingUser = await userModel.findByIdAndUpdate(id, { $set: { verified: true } });
+
+    if (!existingUser) {
+      return { success: false, message: "User not found" };
+    }
+
+    return { success: true, message: "User verified successfully" , data: existingUser };
+};
+
+const signupSendValidation = async (data) => {
   try {
     const userEmail = data.email;
 
-    // Check if a user with the provided email already exists
     const existingUser = await userModel.findOne({ email: userEmail });
-
-    
-    if (existingUser) {
-      const updatedUser = await userModel.findOneAndUpdate(
-        { email: userEmail },
-        { $set: { ...data } },
-        { new: true }
-      );
-      return { success: true, message: "Email already in use", data: updatedUser };
-    } else {
-      // If the user doesn't exist, create a new user
-      const newUser = await userModel.create(data);
-      return { success: true, message: "User created", data: newUser };
+    if(!existingUser){
+      const validationData = await userModel.create(data)
+      const link = "https://tnbphp5.smbdigitalzone.online/signup/" + validationData._id
+      sendEmail(`Please click on the <a href="${link}">Link</a> to verify your email. ${link}`, data.email, "Verify Email")
+      return { success: true, message: "Validation sent" };
+    }else{
+      return { success: false, message: "Email already in use"};
     }
+
   } catch (error) {
     console.error(error);
     return { success: false, message: "Error creating user" };
@@ -352,5 +359,6 @@ module.exports = {
   getAllUsers,
   getAllNewsLetterUsers,
   subscribeToNewsletter,
-  updateUser
+  updateUser,
+  signupSendValidation
 };

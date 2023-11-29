@@ -15,6 +15,7 @@ const userSchema = mongoose.Schema({
   saveForLater: [String],
   image: { type: String, default: "https://static.vecteezy.com/system/resources/previews/005/545/335/large_2x/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg" },
   username: String,
+  verified: { type: Boolean, default: false },
   phone: String,
   address: String,
   city: String,
