@@ -323,8 +323,6 @@ const addToRecentlyViewed = async (data) => {
 };
 
 const updateUser = async (id, data) => {
-  console.log(id)
-  console.log(data)
   try {
       const user  = await userModel.findByIdAndUpdate(id, data, { new: true });
 

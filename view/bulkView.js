@@ -2,9 +2,7 @@ const productModel = require("../models/product");
 
 const uploadData = async (data) => {
   try {
-    console.log("upload started")
     data.forEach(async (productData , index) => {
-      console.log(index, " : " ,productData)
       const product = new productModel(productData);
       await product.save();
     });
