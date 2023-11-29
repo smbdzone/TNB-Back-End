@@ -40,6 +40,31 @@ const signup = async (req, res) => {
   }
 };
 
+const subscribeToNewsletter = async (req, res) => {
+  try {
+
+
+    try {
+      const result = await userView.subscribeToNewsletter(req.body);
+
+      if (result.success) {
+        res
+          .status(200)
+          .json({ data: result.data, error: null, message: result.message });
+      } else {
+        res.status(500).json({ error: result.error });
+      }
+    } catch (viewError) {
+      // If an error occurs during the view processing, send a 500 status with an error message.
+      res.status(500).json({ error: viewError.message });
+    }
+  } catch (error) {
+    console.log(error);
+    // If an error occurs outside of the view processing, send a 500 status with a generic error message.
+    res.status(500).json({ error: "Error in creating data" });
+  }
+};
+
 const signin = async (req, res) => {
   try {
     try {
@@ -247,8 +272,58 @@ const addToRecentlyViewed = async (req, res) => {
   }
 };
 
+const getAllUsers = async (req, res) => {
+  try {
+    try {
+      const result = await userView.getAllUsers();
+
+      if (result.success) {
+        res
+          .status(200)
+          .json({ data: result.data, error: null, message: result.message });
+      } else {
+        res.status(500).json({ error: result.error });
+      }
+    } catch (viewError) {
+      // If an error occurs during the view processing, send a 500 status with an error message.
+      res.status(500).json({ error: viewError.message });
+    }
+  } catch (error) {
+    console.log(error);
+    // If an error occurs outside of the view processing, send a 500 status with a generic error message.
+    res.status(500).json({ error: "Error in creating data" });
+  }
+};
+
+const getAllNewsLetterUsers = async (req, res) => {
+  try {
+    try {
+      const result = await userView.getAllNewsLetterUsers();
+
+      if (result.success) {
+        res
+          .status(200)
+          .json({ data: result.data, error: null, message: result.message });
+      } else {
+        res.status(500).json({ error: result.error });
+      }
+    } catch (viewError) {
+      // If an error occurs during the view processing, send a 500 status with an error message.
+      res.status(500).json({ error: viewError.message });
+    }
+  } catch (error) {
+    console.log(error);
+    // If an error occurs outside of the view processing, send a 500 status with a generic error message.
+    res.status(500).json({ error: "Error in creating data" });
+  }
+};
+
+
+
 module.exports = {
     getUserById,
+    getAllUsers,
+    subscribeToNewsletter,
     signin,
     signup,
     addToCart,
@@ -259,4 +334,5 @@ module.exports = {
     addToSaveLater,
     removeFromSaveLater,
     addToRecentlyViewed,
+    getAllNewsLetterUsers,
 };
