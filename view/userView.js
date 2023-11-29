@@ -72,8 +72,9 @@ const signin = async (data) => {
 
 const signup = async (data) => {
   const id = data.id;
-
+    console.log("first : ",id)
     const existingUser = await userModel.findByIdAndUpdate(id, { $set: { verified: true } });
+    console.log("first : ",existingUser)
 
     if (!existingUser) {
       return { success: false, message: "User not found" };

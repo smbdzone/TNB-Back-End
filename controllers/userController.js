@@ -17,7 +17,6 @@ const getUserById = async (req, res) => {
 };
 
 const signup = async (req, res) => {
-  console.log("haha")
   try {
 
     try {
@@ -42,7 +41,6 @@ const signup = async (req, res) => {
 };
 
 const signupSendValidation = async (req, res) => {
-  console.log("hahaha")
   try {
 
     try {
