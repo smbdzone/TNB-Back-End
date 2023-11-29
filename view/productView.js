@@ -99,8 +99,8 @@ const updateProduct = async (id, data) => {
 };
 
 module.exports = {
-  getProduct, 
-  getProductById, 
+  getProduct,
+  getProductById,
   postProduct,
   deleteProduct,
   updateProduct,

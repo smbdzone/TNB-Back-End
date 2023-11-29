@@ -16,4 +16,5 @@ router.post("/removeFromSaveLater", userController.removeFromSaveLater);
 router.post("/addToRecentlyViewed", userController.addToRecentlyViewed);
 router.post("/subscribeToNewsletter", userController.subscribeToNewsletter);
 router.post("/", userController.signup);
+router.put("/:id", userController.updateUser);
 module.exports = router;

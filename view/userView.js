@@ -17,7 +17,7 @@ const getUserById = async (id) => {
 
 const getAllUsers = async () => {
   try {
-    
+
     const users = await userModel.find({ subscribeToNewsletter: false });
 
     if (!users) {
@@ -322,6 +322,23 @@ const addToRecentlyViewed = async (data) => {
   }
 };
 
+const updateUser = async (id, data) => {
+  console.log(id)
+  console.log(data)
+  try {
+      const user  = await userModel.findByIdAndUpdate(id, data, { new: true });
+
+      if (user ) {
+          return { success: true, message: "Data updated", data: user };
+      } else {
+          return { success: false, message: "user not found" };
+      }
+  } catch (error) {
+      console.error("Error updating data:", error);
+      return { success: false, message: "Error updating data" };
+  }
+};
+
 module.exports = {
   getUserById,
   signin,
@@ -336,5 +353,6 @@ module.exports = {
   addToRecentlyViewed,
   getAllUsers,
   getAllNewsLetterUsers,
-  subscribeToNewsletter
+  subscribeToNewsletter,
+  updateUser
 };
