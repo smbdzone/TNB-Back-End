@@ -1,5 +1,15 @@
 const gitRegistryModel = require("../models/giftRegistry");
 
+const getGiftRegistryAll = async () => {
+  try {
+    const deals = await gitRegistryModel.find({});
+    return { success: true, message: "Data retrieved", data: deals };
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: "Error Saving Data" };
+  }
+};
+
 const getGiftRegistryById = async (id) => {
   try {
     const deals = await gitRegistryModel.findById(id);
@@ -77,6 +87,7 @@ const removeProduct = async (id, productId) => {
 };
 
 module.exports = {
+  getGiftRegistryAll,
   getUserGiftRegistry,
   postUserGiftRegistry,
   addProduct,

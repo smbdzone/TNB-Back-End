@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const userSchema = mongoose.Schema({
-  email: { type: String, unique: true , require: true },
+  email: { type: String, unique: true, require: true },
   password: String,
   accountType: String,
   cartItems: [
@@ -21,7 +21,10 @@ const userSchema = mongoose.Schema({
   city: String,
   giftRegistry: [String],
   orders: [String],
+  blocked: { type: Boolean, default: false },
   subscribeToNewsletter: { type: Boolean, default: false },
+  createDate: { type: Date, default: Date.now },
+  dateOfBirth: Date,
 });
 
 const userModel = mongoose.model("users", userSchema);
