@@ -1,5 +1,21 @@
 const giftRegistryView = require("../view/giftRegistryView");
 
+const getGiftRegistryAll = async (req, res) => {
+    try {
+        const result = await giftRegistryView.getGiftRegistryAll();
+        if (result.success) {
+            res
+                .status(200)
+                .json({ data: result.data, error: null, message: result.message });
+        } else {
+            res.status(500).json({ error: result.error });
+        }
+    } catch (viewError) {
+        // If an error occurs during the view processing, send a 500 status with an error message.
+        res.status(500).json({ error: viewError.message });
+    }
+};
+
 const getUserGiftRegistry = async (req, res) => {
     const { id } = req.params;
     try {
@@ -83,6 +99,7 @@ const postUserGiftRegistry = async (req, res) => {
 };
 
 module.exports = {
+    getGiftRegistryAll,
     getUserGiftRegistry,
     postUserGiftRegistry,
     addProduct,
