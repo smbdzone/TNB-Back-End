@@ -55,6 +55,10 @@ const signin = async (data) => {
       return { success: false, message: "No users found" };
     }
 
+    if (!user.verified) {
+      return { success: false, message: "User Not verified" };
+    }
+
     if (data.accountType !== "google") {
       if (user.password === data.password) {
         return { success: true, message: "Success Login", data: user };

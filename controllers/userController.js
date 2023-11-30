@@ -344,8 +344,25 @@ const getAllNewsLetterUsers = async (req, res) => {
 const updateUser = async (req, res) => {
   const { id } = req.params;
 
+  const data = {}
+  if (req.body.username !== null) {
+      data.username = req.body.username;
+  }
+  if (req.body.email !== null) {
+      data.email = req.body.email;
+  }
+  if (req.body.address !== null) {
+      data.address = req.body.address;
+  }
+  if (req.body.city !== null) {
+      data.city = req.body.city;
+  }
+  if (req.body.image !== null) {
+      data.image = req.body.image;
+  }
+
   try {
-      const result = await userView.updateUser(id, req.body, { new: true });
+      const result = await userView.updateUser(id, data, { new: true });
 
       if (result.success) {
           res.status(200).json({ data: result, error: null, message: 'User updated successfully' });

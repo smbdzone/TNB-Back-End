@@ -19,6 +19,29 @@ const getProduct = async (req) => {
   }
 };
 
+const searchProducts = async (data) => {
+  try {
+
+    const regexPattern = new RegExp(data, 'i');
+
+    const products = await productModel
+      .find({
+        $or: [
+          { name: { $regex: regexPattern } },
+          { 'mainCategory.name': { $regex: regexPattern } },
+          { 'brand.name': { $regex: regexPattern } },
+          { 'subCategory.name': { $regex: regexPattern } },
+        ],
+      })
+      .limit(4);
+      
+    return { success: true, message: "Data retrieved", data: products };
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: "Error retrieving data" };
+  }
+};
+
 const latestProducts = async () => {
   try {
 
@@ -98,6 +121,24 @@ const updateProduct = async (id, data) => {
   }
 };
 
+const addReview = async ( data) => {
+  try {
+    const product = await productModel.findByIdAndUpdate(
+      data.id,
+      { $push: { review: data.review } },
+      { new: true }
+    );
+    if (product) {
+      return { success: true, message: "Data updated", data: product };
+    } else {
+      return { success: false, message: "product not found" };
+    }
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: "Error updating data" };
+  }
+};
+
 module.exports = {
   getProduct,
   getProductById,
@@ -105,5 +146,7 @@ module.exports = {
   deleteProduct,
   updateProduct,
   getByArray,
-  latestProducts
+  latestProducts,
+  searchProducts,
+  addReview
 };

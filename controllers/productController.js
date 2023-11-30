@@ -15,6 +15,36 @@ const getProduct = async (req, res) => {
   }
 };
 
+const addReview = async (req, res) => {
+  try {
+    const result = await productView.addReview(req.body);
+
+    if (result.success) {
+      res.status(200).json({ data: result.data, error: null, message: result.message });
+    } else {
+      res.status(500).json({ error: result.error });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error in retrieving data" });
+  }
+};
+
+const searchProducts = async (req, res) => {
+  try {
+    const result = await productView.searchProducts(req.body.data);
+
+    if (result.success) {
+      res.status(200).json({ data: result.data, error: null, message: result.message });
+    } else {
+      res.status(500).json({ error: result.error });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error in retrieving data" });
+  }
+};
+
 const latestProducts = async (req, res) => {
   try {
     const result = await productView.latestProducts();
@@ -143,6 +173,8 @@ module.exports = {
   postProduct,
   deleteProduct,
   updateProduct,
+  addReview,
   getByArray,
-  latestProducts
+  latestProducts,
+  searchProducts
 };

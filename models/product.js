@@ -33,6 +33,7 @@ const productSchema = mongoose.Schema({
   color: [String],
   size: [String],
   lines: [String],
+  review: [{username : String , id: String , comment: String , rating: String}],
   overview: String,
   description: String,
   meta_title: String,

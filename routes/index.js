@@ -11,6 +11,7 @@ const menuRoute = require("./menuRoute.js");
 const userRoute = require("./userRoute.js");
 const inspirationRoute = require("./inspirationRoute.js");
 const productDetailExplorerRoute = require("./productDetailExplorerRoute.js");
+const giftRegistryRoute = require("./giftRegistryRoute.js");
 const cloudinaryImageRoute = require("./cloudinaryImageRoute.js");
 const tableTalkRoute = require("./tableTalkRoute.js");
 
@@ -28,5 +29,6 @@ router.use("/tableTalk", tableTalkRoute);
 router.use("/productDetailExplorer", productDetailExplorerRoute);
 router.use("/user", userRoute);
 router.use("/product-inspiration", inspirationRoute);
+router.use("/giftRegistry", giftRegistryRoute);
 
 module.exports = router;
