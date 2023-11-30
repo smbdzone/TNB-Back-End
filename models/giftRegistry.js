@@ -8,8 +8,9 @@ const gitRegistrySchema = mongoose.Schema({
     location: String,
     message: String,
     products: [String],
-    from: String
+    from: String,
+    fromName: String
 });
 
-const gitRegistryModel = mongoose.model("banner", gitRegistrySchema);
+const gitRegistryModel = mongoose.model("giftRegistry", gitRegistrySchema);
 module.exports = gitRegistryModel;
