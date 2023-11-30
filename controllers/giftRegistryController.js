@@ -20,7 +20,7 @@ const getUserGiftRegistry = async (req, res) => {
 const getGiftRegistryById = async (req, res) => {
     const { id } = req.params;
     try {
-        const result = await giftRegistryView.getUserGiftRegistry(id);
+        const result = await giftRegistryView.getGiftRegistryById(id);
         if (result.success) {
             res
                 .status(200)
