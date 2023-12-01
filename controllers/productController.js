@@ -45,6 +45,21 @@ const searchProducts = async (req, res) => {
   }
 };
 
+const getAllSearchProducts = async (req, res) => {
+  try {
+    const result = await productView.getAllSearchProducts(req.body.data);
+
+    if (result.success) {
+      res.status(200).json({ data: result.data, error: null, message: result.message });
+    } else {
+      res.status(500).json({ error: result.error });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error in retrieving data" });
+  }
+};
+
 const latestProducts = async (req, res) => {
   try {
     const result = await productView.latestProducts();
@@ -176,5 +191,6 @@ module.exports = {
   addReview,
   getByArray,
   latestProducts,
-  searchProducts
+  searchProducts,
+  getAllSearchProducts
 };
