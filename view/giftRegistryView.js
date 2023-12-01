@@ -20,6 +20,20 @@ const getGiftRegistryById = async (id) => {
   }
 };
 
+const deleteGiftRegistry = async (id) => {
+  try {
+    const deletedRegistry = await gitRegistryModel.findByIdAndDelete(id);
+    if (deletedRegistry) {
+      return { success: true, message: "Gift registry deleted successfully", data: deletedRegistry };
+    } else {
+      return { success: false, message: "Gift registry not found" };
+    }
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: "Error deleting gift registry" };
+  }
+};
+
 const getUserGiftRegistry = async (id) => {
   try {
     const registries = await gitRegistryModel.find({ from: id });
@@ -91,6 +105,7 @@ module.exports = {
   getUserGiftRegistry,
   postUserGiftRegistry,
   addProduct,
+  deleteGiftRegistry,
   removeProduct,
   getGiftRegistryById,
 };
