@@ -345,20 +345,23 @@ const updateUser = async (req, res) => {
   const { id } = req.params;
 
   const data = {}
-  if (req.body.username !== null) {
+  if (req.body.username !== null && req.body.username !== "" && req.body.username) {
       data.username = req.body.username;
   }
-  if (req.body.email !== null) {
+  if (req.body.email !== null && req.body.email !== "" && req.body.email) {
       data.email = req.body.email;
   }
-  if (req.body.address !== null) {
+  if (req.body.address !== null && req.body.address !== "" && req.body.address) {
       data.address = req.body.address;
   }
-  if (req.body.city !== null) {
+  if (req.body.city !== null && req.body.city !== "" && req.body.city) {
       data.city = req.body.city;
   }
-  if (req.body.image !== null) {
+  if (req.body.image !== null && req.body.image !== "" && req.body.image) {
       data.image = req.body.image;
+  }
+  if (req.body.dateOfBirth !== null && req.body.dateOfBirth !== "" && req.body.dateOfBirth) {
+      data.dateOfBirth = req.body.dateOfBirth;
   }
 
   try {

@@ -6,6 +6,7 @@ const gitRegistrySchema = mongoose.Schema({
     startDate: String,
     endDate: String,
     location: String,
+    city: String,
     message: String,
     products: [String],
     from: String,
