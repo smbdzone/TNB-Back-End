@@ -86,6 +86,22 @@ const removeProduct = async (id, productId) => {
   }
 };
 
+const deleteRegistry = async (id) => {
+
+  console.log("request id", id);
+  try {
+    const banner = await gitRegistryModel.findByIdAndDelete(id);
+    if (banner) {
+      return { success: true, message: "Data deleted", data: banner };
+    } else {
+      return { success: false, message: "Gift Registry not found" };
+    }
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: "Error deleting data" };
+  }
+};
+
 module.exports = {
   getGiftRegistryAll,
   getUserGiftRegistry,
@@ -93,4 +109,5 @@ module.exports = {
   addProduct,
   removeProduct,
   getGiftRegistryById,
+  deleteRegistry,
 };

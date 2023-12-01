@@ -14,6 +14,7 @@ const productDetailExplorerRoute = require("./productDetailExplorerRoute.js");
 const giftRegistryRoute = require("./giftRegistryRoute.js");
 const cloudinaryImageRoute = require("./cloudinaryImageRoute.js");
 const tableTalkRoute = require("./tableTalkRoute.js");
+const voucherRoute = require("./voucherRoute.js");
 
 router.use("/delete-cloudinary-image", cloudinaryImageRoute);
 router.use("/bulk_upload", bulkRoute);
@@ -29,6 +30,7 @@ router.use("/tableTalk", tableTalkRoute);
 router.use("/productDetailExplorer", productDetailExplorerRoute);
 router.use("/user", userRoute);
 router.use("/product-inspiration", inspirationRoute);
+router.use("/voucher", voucherRoute);
 router.use("/giftRegistry", giftRegistryRoute);
 
 module.exports = router;

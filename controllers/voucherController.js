@@ -1,8 +1,8 @@
-const giftRegistryView = require("../view/giftRegistryView");
+const voucherView = require("../view/voucherView");
 
-const getGiftRegistryAll = async (req, res) => {
+const getVoucher = async (req, res) => {
     try {
-        const result = await giftRegistryView.getGiftRegistryAll();
+        const result = await voucherView.getVoucher();
         if (result.success) {
             res
                 .status(200)
@@ -16,10 +16,10 @@ const getGiftRegistryAll = async (req, res) => {
     }
 };
 
-const getUserGiftRegistry = async (req, res) => {
+const getVoucherById = async (req, res) => {
     const { id } = req.params;
     try {
-        const result = await giftRegistryView.getUserGiftRegistry(id);
+        const result = await voucherView.getVoucherById(id);
         if (result.success) {
             res
                 .status(200)
@@ -33,10 +33,28 @@ const getUserGiftRegistry = async (req, res) => {
     }
 };
 
-const getGiftRegistryById = async (req, res) => {
+const createVoucher = async (req, res) => {
+    try {
+        const result = await voucherView.createVoucher(req.body);
+
+        if (result.success) {
+            res
+                .status(200)
+                .json({ data: result.data, error: null, message: result.message });
+        } else {
+            res.status(500).json({ error: result.error });
+        }
+    } catch (viewError) {
+        // If an error occurs during the view processing, send a 500 status with an error message.
+        res.status(500).json({ error: viewError.message });
+    }
+};
+
+const deleteVoucher = async (req, res) => {
     const { id } = req.params;
     try {
-        const result = await giftRegistryView.getUserGiftRegistry(id);
+        const result = await voucherView.deleteVoucher(id);
+
         if (result.success) {
             res
                 .status(200)
@@ -50,58 +68,10 @@ const getGiftRegistryById = async (req, res) => {
     }
 };
 
-const addProduct = async (req, res) => {
-    try {
-        const result = await giftRegistryView.addProduct(req.body.id, req.body.product);
-        if (result.success) {
-            res
-                .status(200)
-                .json({ data: result.data, error: null, message: result.message });
-        } else {
-            res.status(500).json({ error: result.error });
-        }
-    } catch (viewError) {
-        // If an error occurs during the view processing, send a 500 status with an error message.
-        res.status(500).json({ error: viewError.message });
-    }
-};
-
-const removeProduct = async (req, res) => {
-    try {
-        const result = await giftRegistryView.removeProduct(req.body.id, req.body.product);
-        if (result.success) {
-            res
-                .status(200)
-                .json({ data: result.data, error: null, message: result.message });
-        } else {
-            res.status(500).json({ error: result.error });
-        }
-    } catch (viewError) {
-        // If an error occurs during the view processing, send a 500 status with an error message.
-        res.status(500).json({ error: viewError.message });
-    }
-};
-
-const postUserGiftRegistry = async (req, res) => {
-    try {
-        const result = await giftRegistryView.postUserGiftRegistry(req.body);
-        if (result.success) {
-            res
-                .status(200)
-                .json({ data: result.data, error: null, message: result.message });
-        } else {
-            res.status(500).json({ error: result.error });
-        }
-    } catch (viewError) {
-        // If an error occurs during the view processing, send a 500 status with an error message.
-        res.status(500).json({ error: viewError.message });
-    }
-};
-
-const deleteRegistry = async (req, res) => {
+const updateVoucher = async (req, res) => {
     const { id } = req.params;
     try {
-        const result = await giftRegistryView.deleteRegistry(id);
+        const result = await voucherView.updateVoucher(id, req.body);
         if (result.success) {
             res
                 .status(200)
@@ -116,11 +86,9 @@ const deleteRegistry = async (req, res) => {
 };
 
 module.exports = {
-    getGiftRegistryAll,
-    getUserGiftRegistry,
-    postUserGiftRegistry,
-    addProduct,
-    removeProduct,
-    getGiftRegistryById,
-    deleteRegistry
+    getVoucher,
+    getVoucherById,
+    createVoucher,
+    deleteVoucher,
+    updateVoucher,
 };
