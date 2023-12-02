@@ -12,6 +12,7 @@ const getVoucher = async () => {
 
 const getVoucherById = async (id) => {
     try {
+        console.log(id)
         const voucher = await voucherModel.findById(id);
         return { success: true, message: "Data retrieved", data: voucher };
     } catch (error) {
@@ -19,6 +20,16 @@ const getVoucherById = async (id) => {
         return { success: false, message: "Error Saving Data" };
     }
 };
+
+const getVoucherByUserId = async (userId) => {
+    try {
+      const vouchers = await voucherModel.find({ user: userId });
+      return { success: true, message: "Data retrieved", data: vouchers };
+    } catch (error) {
+      console.error(error);
+      return { success: false, message: "Error retrieving data" };
+    }
+  };
 
 const createVoucher = async (data) => {
     try {
@@ -65,4 +76,5 @@ module.exports = {
     createVoucher,
     deleteVoucher,
     updateVoucher,
+    getVoucherByUserId
 };
