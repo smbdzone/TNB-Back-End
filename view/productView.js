@@ -42,6 +42,29 @@ const searchProducts = async (data) => {
   }
 };
 
+const getTwentysearchProducts = async (data) => {
+  try {
+
+    const regexPattern = new RegExp(data, 'i');
+
+    const products = await productModel
+      .find({
+        $or: [
+          { name: { $regex: regexPattern } },
+          { 'mainCategory.name': { $regex: regexPattern } },
+          { 'brand.name': { $regex: regexPattern } },
+          { 'subCategory.name': { $regex: regexPattern } },
+        ],
+      })
+      .limit(20);
+      
+    return { success: true, message: "Data retrieved", data: products };
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: "Error retrieving data" };
+  }
+};
+
 const getAllSearchProducts = async (data) => {
   try {
 
@@ -169,6 +192,7 @@ module.exports = {
   getByArray,
   latestProducts,
   searchProducts,
+  getTwentysearchProducts,
   getAllSearchProducts,
   addReview
 };
